@@ -1,5 +1,6 @@
-/ebin
 /.rebar
+/ebin
+/deps
 
 *.swp
 Thumbs.db
