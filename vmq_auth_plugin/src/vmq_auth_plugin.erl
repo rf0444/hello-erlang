@@ -1,4 +1,4 @@
--module(hello).
+-module(vmq_auth_plugin).
 
 -export([start/0,
          stop/0]).
@@ -13,8 +13,8 @@
 -define(TABLE, ?MODULE).
 
 start() ->
-    error_logger:info_msg("hello start", []),
-    {ok, _} = application:ensure_all_started(hello),
+    error_logger:info_msg("sample plugin start", []),
+    {ok, _} = application:ensure_all_started(vmq_auth_plugin),
     case ets:info(?TABLE, name) of
         ?TABLE ->
             ok;
@@ -24,8 +24,8 @@ start() ->
     end.
 
 stop() ->
-    error_logger:info_msg("hello stop", []),
-    application:stop(hello).
+    error_logger:info_msg("sample plugin stop", []),
+    application:stop(vmq_auth_plugin).
 
 auth_on_register(Peer, {_, ClientId}, UserName, Password, CleanSession) ->
     error_logger:info_msg("auth_on_register - peer: ~p, client id: ~p, user: ~p, pass: ~p, clean: ~p", [Peer, ClientId, UserName, Password, CleanSession]),

@@ -1,4 +1,4 @@
--module(hello_sup).
+-module(vmq_auth_plugin_sup).
 
 -behaviour(supervisor).
 

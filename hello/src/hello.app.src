@@ -8,12 +8,5 @@
                   stdlib
                  ]},
   {mod, { hello_app, []}},
-  {env, [
-         {vmq_plugin_hooks, 
-          [
-           {hello, auth_on_register, 5, []},
-           {hello, auth_on_publish, 6, []},
-           {hello, auth_on_subscribe, 3, []}
-          ]}
-        ]}
+  {env, []}
  ]}.

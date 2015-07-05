@@ -1,0 +1,19 @@
+{application, vmq_auth_plugin,
+ [
+  {description, "VerneMQ authentication/authorization plugin sample"},
+  {vsn, "1"},
+  {registered, []},
+  {applications, [
+                  kernel,
+                  stdlib
+                 ]},
+  {mod, { vmq_auth_plugin_app, []}},
+  {env, [
+         {vmq_plugin_hooks, 
+          [
+           {vmq_auth_plugin, auth_on_register, 5, []},
+           {vmq_auth_plugin, auth_on_publish, 6, []},
+           {vmq_auth_plugin, auth_on_subscribe, 3, []}
+          ]}
+        ]}
+ ]}.
